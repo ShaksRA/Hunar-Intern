@@ -13,9 +13,6 @@
 
 ![image](https://github.com/user-attachments/assets/5b2942dc-969a-4296-8158-4c8897586b35)
 
-
-## View live preview [here]http://localhost:3000/
-
 ---
 
 ## Table of Contents :scroll:
