@@ -11,9 +11,10 @@
 
 # Demo :movie_camera:
 
-![](./public/image/screen.png)
+![image](https://github.com/user-attachments/assets/5b2942dc-969a-4296-8158-4c8897586b35)
 
-## View live preview [here](https://abusaid.netlify.app/).
+
+## View live preview [here]http://localhost:3000/
 
 ---
 
