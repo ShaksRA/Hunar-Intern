@@ -1,36 +1,28 @@
-import axios from 'axios';
+import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const payload = await request.json();
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chat_id = process.env.TELEGRAM_CHAT_ID;
-
-  if (!token || !chat_id) {
-    return NextResponse.json({
-      success: false,
-    }, { status: 200 });
-  };
+  const reqBody = await request.json();
+  const secret_key = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
 
   try {
-    const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    const message = `New message from ${payload.name}\n\nEmail: ${payload.email}\n\nMessage:\n ${payload.message}\n\n`;
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${reqBody.token}`;
 
-    const res = await axios.post(url, {
-      text: message,
-      chat_id: process.env.TELEGRAM_CHAT_ID
-    });
-
-    if (res.data.ok) {
+    const res = await axios.post(url);
+    if (res.data.success) {
       return NextResponse.json({
+        message: "Captcha verification success!!",
         success: true,
-        message: "Message sent successfully!",
-      }, { status: 200 });
+      })
     };
-  } catch (error) {
-    console.log(error.response.data)
+
     return NextResponse.json({
-      message: "Message sending failed!",
+      error: "Captcha verification failed!",
+      success: false,
+    }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({
+      error: "Captcha verification failed!",
       success: false,
     }, { status: 500 });
   }
