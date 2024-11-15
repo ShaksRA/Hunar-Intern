@@ -39,7 +39,7 @@ Check out the live demo of the BMI Calculator [here](https://bmi-calculator-in.n
 
 ### Screenshots
 
-![Screenshot 2024-09-03 191648](https://github.com/user-attachments/assets/c969457d-4309-4b31-a395-18c33277b3ca)
+![image](https://github.com/user-attachments/assets/fb973d62-fb66-499f-9ed5-4d3911892098)
 
 
 ### Conclusion
