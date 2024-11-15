@@ -9,7 +9,7 @@ const App = () => {
       </div>
       <BmiCalculator />
       <div className="footer">
-        <p>Made with ❤️ by Abhishek Gurjar</p>
+        <p>Made with ❤️ by Rohan Agarwal</p>
       </div>
     </div>
   );
